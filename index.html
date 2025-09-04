@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetForma - Conectando pessoas através do amor pelos pets</title>
+  <link rel="icon" type="image/x-icon" href="./assets/petforma.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <img src="./assets/petforma-logo.png" alt="Logo da PetForma" class="logo">
+      <nav>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#pets">Pets</a></li>
+          <li><a href="donation.html">Faça uma doação</a></li>
+          <li><a href="about.html">Sobre Nós</a></li>
+          <li><a href="contact.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>PetForma</h1>
+        <p class="tagline">Conectando pessoas e pets através do amor.</p>
+        <p>A primeira plataforma que permite que pessoas sem pets experimentem a companhia de um animalzinho.</p>
+        <div class="cta-buttons">
+          <a href="#services" class="btn btn-primary">Conheça Nossas Opções</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">Nossos Serviços</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+        <img src="./assets/seja-tio-por-um-dia.png" alt="Seja Tio por um Dia" class="service-img">
+          </div>
+          <div class="service-text">
+        <h3 class="service-title">Seja Tio por um Dia</h3>
+        <p class="service-desc">Cuidados, passeios e diversão nos seus dias disponíveis.<br>Experimente um final de semana diferente.</p>
+          </div>
+          <div class="service-btn-wrapper">
+        <button class="btn btn-primary" onclick="openBookingModal('passear')">Seja Tio Por Um Dia</button>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+        <img src="./assets/apadrinhe-um-pet.png" alt="Apadrinhe um Pet" class="service-img">
+          </div>
+          <div class="service-text">
+        <h3 class="service-title">Apadrinhe um Pet</h3>
+        <p class="service-desc">Cuide do Pet da sua escolha com recorrência e viva a experiência de ter amor e brincadeiras dele quando você quiser e puder.</p>
+          </div>
+          <div class="service-btn-wrapper">
+        <button class="btn btn-primary" onclick="openBookingModal('cuidar')">Escolha o Seu Afilhado</button>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+        <img src="./assets/leve-para-passear-png.jpeg" alt="Leve um Pet para passear" class="service-img">
+          </div>
+          <div class="service-text">
+        <h3 class="service-title">Leve um Pet para passear</h3>
+        <p class="service-desc">Está com tempo curto e quer dar uma caminhada ao ar livre? Leve um de nossos Pets para te acompanhar.</p>
+          </div>
+          <div class="service-btn-wrapper">
+        <button class="btn btn-primary" onclick="openBookingModal('brincar')">Agendar Passeio</button>
+          </div>
+        </div>
+            </div>
+            <style>
+        .services-grid {
+          display: flex;
+          flex-direction: row;
+          gap: 32px;
+          justify-content: center;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+          }
+          .service-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 16px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            min-width: 300px;
+            max-width: 340px;
+            margin: 0 0 24px 0;
+            height: 440px;
+            box-sizing: border-box;
+            justify-content: space-between;
+          }
+          .service-icon {
+            width: 100%;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none !important;
+            margin-bottom: 10px;
+          }
+          .service-img {
+            object-fit: cover;
+            width: 150px;
+            height: 150px;
+            display: block;
+            border-radius: 16px;
+            background: none !important;
+          }
+          .service-text {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            margin-bottom: 10px;
+          }
+          .service-title {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            line-height: 1.3;
+            width: 100%;
+            min-height: 2.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            z-index: 1;
+            position: relative;
+          }
+          .service-desc {
+            text-align: center;
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.5;
+            width: 100%;
+            flex: 1;
+            display: flex;
+            align-items: center;
+          }
+          .service-btn-wrapper {
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+          }
+          @media (max-width: 1200px) {
+            .services-grid {
+            flex-wrap: wrap;
+            gap: 20px;
+            }
+            .service-card {
+            min-width: 260px;
+            max-width: 98vw;
+            height: auto;
+            }
+          }
+          @media (max-width: 900px) {
+            .services-grid {
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: nowrap;
+            }
+            .service-card {
+            min-width: 90vw;
+            max-width: 98vw;
+            height: auto;
+            }
+          }
+      </style>
+    </div>
+  </section>
+
+  <!-- Pet Gallery -->
+  <section id="pets" class="pet-gallery">
+    <div class="container">
+      <h2>Dê um match com seu Pet</h2>
+      <div class="pets-grid">
+        <div class="pet-card" data-pet-id="persa">
+          <img src="./assets/persa.png" alt="Cachorro Persa">
+          <div class="pet-info">
+            <h3>Persa</h3>
+            <div class="pet-details">
+              <span class="pet-basic">Macho • 4 meses</span>
+              <span class="pet-shelter">🏠 Patas do Bem</span>
+              <span class="pet-location">📍 Santa Rosa, Niterói - RJ</span>
+            </div>
+            <p class="pet-description">Dócil e companheiro. Adora brincar e receber carinho.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'persa')">Agendar</button>
+          </div>
+        </div>
+        <div class="pet-card" data-pet-id="toddy">
+          <img src="./assets/toddy.png" alt="Cachorro Toddy">
+          <div class="pet-info">
+            <h3>Toddy</h3>
+            <div class="pet-details">
+              <span class="pet-basic">Macho • 6 meses</span>
+              <span class="pet-shelter">🏠 Pata Amiga</span>
+              <span class="pet-location">📍 Zona Norte, Rio de Janeiro - RJ</span>
+            </div>
+            <p class="pet-description">Muito brincalhão. Adora passeios e brincar com bolinhas.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'toddy')">Agendar</button>
+          </div>
+        </div>
+        <div class="pet-card" data-pet-id="nina">
+          <img src="./assets/nina.png" alt="Cachorro Nina">
+          <div class="pet-info">
+            <h3>Nina</h3>
+            <div class="pet-details">
+              <span class="pet-basic">Fêmea • 8 meses</span>
+              <span class="pet-shelter">🏠 Casa das Patinhas</span>
+              <span class="pet-location">📍 Zona Oeste, Rio de Janeiro - RJ</span>
+            </div>
+            <p class="pet-description">Amigável e perfeita para famílias e crianças.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'nina')">Agendar</button>
+          </div>
+        </div>
+        <div class="pet-card" data-pet-id="luna">
+          <img src="./assets/luna.png" alt="Cachorro Luna">
+          <div class="pet-info">
+            <h3>Luna</h3>
+            <div class="pet-details">
+              <span class="pet-basic">Fêmea • 1 ano</span>
+              <span class="pet-shelter">🏠 Cantinho dos Focinhos</span>
+              <span class="pet-location">📍 Zona Sul, Rio de Janeiro - RJ</span>
+            </div>
+            <p class="pet-description">Fofa e independente. Gosta de atenção.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'luna')">Agendar</button>
+          </div>
+        </div>
+        <div class="pet-card" data-pet-id="thor">
+          <img src="./assets/thor.png" alt="Cachorro Thor">
+          <div class="pet-info">
+            <h3>Thor</h3>
+            <div class="pet-details">
+              <span class="pet-basic">Macho • 1 ano</span>
+              <span class="pet-shelter">🏠 ONG Patas do Amor</span>
+              <span class="pet-location">📍 Cabuçu, Nova Iguaçu - RJ</span>
+            </div>
+            <p class="pet-description">Muito amigável, adora crianças. Ativo e adora brincadeiras.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'thor')">Agendar</button>
+          </div>
+        </div>
+        <div class="pet-card" data-pet-id="mel">
+          <img src="./assets/mel.png" alt="Cachorro Mel">
+          <div class="pet-info">
+            <h3>Mel</h3>
+            <div class="pet-details">
+              <span class="pet-basic">Fêmea • 3 anos</span>
+              <span class="pet-shelter">🏠 Instituto Luz Animal</span>
+              <span class="pet-location">📍 Região Oceânica, Niterói - RJ</span>
+            </div>
+            <p class="pet-description">Dócil, amorosa e tranquila. Prefere ambientes calmos.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'mel')">Agendar</button>
+          </div>
+        </div>
+        <div class="pet-card" data-pet-id="max">
+          <img src="./assets/max.png" alt="Cachorro Max">
+          <div class="pet-info">
+            <h3>Max</h3>
+            <div class="pet-details">
+              <span class="pet-basic">Macho • 2 anos</span>
+              <span class="pet-shelter">🏠 ONG Estrela Animal</span>
+              <span class="pet-location">📍 Centro, Nova Iguaçu - RJ</span>
+            </div>
+            <p class="pet-description">Amoroso e carente. Adora ficar abraçado.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'max')">Agendar</button>
+          </div>
+        </div>
+        <div class="pet-card" data-pet-id="dalla">
+          <img src="./assets/dalla.png" alt="Cachorro Dalla">
+          <div class="pet-info">
+            <h3>Dalla</h3>
+            <div class="pet-details">
+              <span class="pet-basic">Fêmea • 4 anos</span>
+              <span class="pet-shelter">🏠 Cantinho dos Focinhos</span>
+              <span class="pet-location">📍 Zona Sul, Rio de Janeiro - RJ</span>
+            </div>
+            <p class="pet-description">Dócil e adora brincadeiras. Muito carinhosa.</p>
+            <button class="btn btn-primary" onclick="openBookingModal('', 'dalla')">Agendar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeBookingModal()">&times;</span>
+      <h2>Agendar Serviço</h2>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="service">Serviço:</label>
+          <select id="service" name="service" required>
+            <option value="">Selecione um serviço</option>
+            <option value="passear">Seja Tio Por Um Dia</option>
+            <option value="cuidar">Apadrinhe Um Pet</option>
+            <option value="brincar">Leve Um Pet Para Passear</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="location">Localidade:</label>
+          <select id="location" name="location" required>
+            <option value="">Selecione sua localidade</option>
+            <!-- Opções serão preenchidas dinamicamente baseadas nos pets cadastrados -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pet">Pet Disponível:</label>
+          <select id="pet" name="pet" required>
+            <option value="">Primeiro selecione uma localidade</option>
+          </select>
+          <div id="petInfoDisplay" class="pet-info-display" style="display: none;">
+            <div class="pet-selected-info">
+              <img id="petInfoImage" src="" alt="" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;">
+              <div class="pet-selected-details">
+                <h4 id="petInfoName"></h4>
+                <p id="petInfoDetails"></p>
+                <p id="petInfoShelter"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="date">Data:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="time">Horário:</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+        <div class="form-group">
+          <label for="duration">Duração:</label>
+          <select id="duration" name="duration" required>
+            <option value="">Primeiro selecione um serviço</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="name">Seu Nome:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group kit-section">
+          <label>Adicione um kit para tornar sua experiência mais especial:</label>
+          <div class="kit-container">
+            <img src="./assets/kit-pet.png" alt="Kit Pet" class="kit-image">
+            <div class="kit-options">
+              <div class="kit-option">
+                <input type="radio" id="kit-sobrevivencia" name="kit" value="sobrevivencia" checked>
+                <label for="kit-sobrevivencia">
+                  <strong>Kit de Sobrevivência - R$ 40,00</strong><br>
+                  <span class="kit-description">Ração para o período, Coleira para passeios e 1 biscoito</span>
+                </label>
+              </div>
+              <div class="kit-option">
+                <input type="radio" id="kit-babao" name="kit" value="babao">
+                <label for="kit-babao">
+                  <strong>Kit Tio Babão - R$ 50,00</strong><br>
+                  <span class="kit-description">Ração para o período, Coleira para passeios, bolinha de borracha e 3 biscoitos</span>
+                </label>
+              </div>
+              <div class="kit-option">
+                <input type="radio" id="kit-vovo" name="kit" value="vovo">
+                <label for="kit-vovo">
+                  <strong>Kit Criado com a Vovó - R$ 60,00</strong><br>
+                  <span class="kit-description">Ração para o período, Coleira para passeios, brinquedo de corda, biscoitos de livre escolha</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="observations">Observações:</label>
+          <textarea id="observations" name="observations" 
+                    placeholder="Alguma preferência ou informação adicional?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Confirmar Agendamento</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#pets">Pets</a></li>
+            <li><a href="donation.html">Faça uma doação</a></li>
+            <li><a href="about.html">Sobre Nós</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <ul>
+            <li>Email: contato@petforma.com</li>
+            <li>Telefone: (21) 99999-9999</li>
+            <li>WhatsApp: (21) 99999-9999</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>Copyright © 2025 PetForma. Todos os direitos reservados.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="pets-data.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
